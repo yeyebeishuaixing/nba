@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>NBA战队</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <style>
+
+        body {
+            padding-top: 50px;
+            padding-bottom: 40px;
+            color: #5a5a5a;
+        }
+
+        /* 轮播广告 */
+
+        .carousel {
+            height: 500px;
+            margin-bottom: 60px;
+        }
+
+        .carousel .item {
+            height: 500px;
+            background-color: #000;
+        }
+
+        .carousel .item img {
+            width: 100%;
+        }
+
+        .carousel-caption {
+            z-index: 10;
+			color:#f56;
+        }
+
+        .carousel-caption p {
+            margin-bottom: 20px;
+            font-size: 20px;
+            line-height: 1.8;
+			
+        }
+
+        /* 简介 */
+
+        .summary {
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+
+        .summary .col-md-4 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 特性 */
+
+        .feature-divider {
+            margin: 40px 0;
+        }
+
+        .feature {
+            padding: 30px 0;
+        }
+
+        .feature-heading {
+            font-size: 50px;
+            color: #2a6496;
+        }
+
+        .feature-heading .text-muted {
+            font-size: 28px;
+        }
+
+        /* 响应式布局 */
+
+        @media (max-width: 768px) {
+
+            .summary {
+                padding-right: 3px;
+                padding-left: 3px;
+            }
+
+            .carousel {
+                height: 300px;
+                margin-bottom: 30px;
+            }
+
+            .carousel .item {
+                height: 300px;
+            }
+
+            .carousel img {
+                min-height: 300px;
+            }
+
+            .carousel-caption p {
+                font-size: 16px;
+                line-height: 1.4;
+				
+            }
+
+            .feature-heading {
+                font-size: 34px;
+            }
+
+            .feature-heading .text-muted {
+                font-size: 22px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .feature-heading {
+                margin-top: 120px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+<!-- 顶部导航 -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation" id="menu-nav">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">切换导航</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">NBA战队</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#ad-carousel">综述</a></li>
+                <li><a href="#summary-container">简述</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">球队<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#feature-tab" data-tab="tab-chrome">勇士</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-firefox">骑士</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-safari">马刺</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-opera">火箭</a></li>
+                        <li><a href="#feature-tab" data-tab="tab-ie">快船</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about-modal">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- 广告轮播 -->
+<div id="ad-carousel" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#ad-carousel" data-slide-to="0" class="active"></li>
+        <li data-target="#ad-carousel" data-slide-to="1"></li>
+        <li data-target="#ad-carousel" data-slide-to="2"></li>
+        <li data-target="#ad-carousel" data-slide-to="3"></li>
+        <li data-target="#ad-carousel" data-slide-to="4"></li>
+    </ol>
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="images/yongshi-big.jpg" alt="1 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>勇士</h1>
+
+                    <p>It's time</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://china.nba.com/warriors/"
+                          role="button" target="_blank">come on</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/qishi-logo.jpg" alt="2 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>骑士</h1>
+
+                    <p>The wait is over</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://china.nba.com/cavaliers/" target="_blank"
+                          role="button">come on</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/huojian-big.jpg" alt="3 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>火箭</h1>
+
+                    <p>Big things are coming</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://china.nba.com/rockets/" target="_blank"
+                          role="button">come on</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/kuaichuan-big.jpg" alt="4 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>快船</h1>
+
+                    <p>Where amazing happen</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://china.nba.com/clippers/" target="_blank"
+                          role="button">come on</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <img src="images/maci-big.jpg" alt="5 slide">
+
+            <div class="container">
+                <div class="carousel-caption">
+                    <h1>马刺</h1>
+
+                    <p>Team is everything</p>
+
+                    <p><a class="btn btn-lg btn-primary" href="http://china.nba.com/spurs/" target="_blank"
+                          role="button">come on</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a class="left carousel-control" href="#ad-carousel" data-slide="prev"><span
+            class="glyphicon glyphicon-chevron-left"></span></a>
+    <a class="right carousel-control" href="#ad-carousel" data-slide="next"><span
+            class="glyphicon glyphicon-chevron-right"></span></a>
+</div>
+
+
+<!-- 主要内容 -->
+<div class="container summary">
+
+    <!-- 简介 -->
+    <div class="row" id="summary-container">
+        <div class="col-md-4">
+            <img class="img-circle" src="images/maci-small.gif" alt="马刺">
+
+            <h2>马刺</h2>
+
+            <p>以体系著称的王朝球队</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我进入</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/kaier-small.gif" alt="凯尔特人">
+
+            <h2>凯尔特人</h2>
+
+            <p>以防守著称的绿衫军</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我进入</a></p>
+        </div>
+        <div class="col-md-4">
+            <img class="img-circle" src="images/kaituo-small.gif" alt="开拓者">
+
+            <h2>开拓者</h2>
+
+            <p>一支准备推到重建，又打进季后赛第二轮的韧性球队。</p>
+
+            <p><a class="btn btn-default" href="#" role="button">点我进入</a></p>
+        </div>
+    </div>
+
+    <!-- 特性 -->
+
+    <hr class="feature-divider">
+
+    <ul class="nav nav-tabs" role="tablist" id="feature-tab">
+        <li class="active"><a href="#tab-maci" role="tab" data-toggle="tab">马刺</a></li>
+        <li><a href="#tab-yongshi" role="tab" data-toggle="tab">勇士</a></li>
+        <li><a href="#tab-huojian" role="tab" data-toggle="tab">火箭</a></li>
+        <li><a href="#tab-qishi" role="tab" data-toggle="tab">骑士</a></li>
+        <li><a href="#tab-kuaichuan" role="tab" data-toggle="tab">快船</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div class="tab-pane active" id="tab-maci">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">马刺 <span
+                            class="text-muted">打体系的球队</span></h2>
+
+                    <p class="lead">拥有GDP三巨头的圣安东尼奥马刺队以优异的战绩俘获了万千球迷，虽然GDP年事以高，但是新生力量的注入让马刺
+					依然闪耀在NBA的赛场上，‘二德’的组合让他们延续着球队的文化。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/maci-t.jpg"
+                         alt="Chrome">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-yongshi">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/yongshi-t.jpg"
+                         alt="Firefox">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">勇士 <span class="text-muted">三分城</span>
+                    </h2>
+
+                    <p class="lead">拥有现役MVP的变态准库里，水花兄弟激情点燃金州</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-huojian">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">火箭 <span class="text-muted">中国情怀的球队</span></h2>
+
+                    <p class="lead">由于大姚曾今效力火箭，虽然如今的火箭早已物是人非，当年的姚麦早已退役，先在的‘魔登’组合依然吸引了大量眼球。</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/huojian-t.jpg"
+                         alt="Safari">
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-qishi">
+            <div class="row feature">
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/qishi-t.jpg"
+                         alt="Opera">
+                </div>
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">骑士<span class="text-muted">小皇帝主场</span>
+                    </h2>
+
+                    <p class="lead">无人不知无人不晓，詹皇联手欧文、乐福组建三巨头，未来是骑士的，哈哈！</p>
+                </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="tab-kuaichuan">
+            <div class="row feature">
+                <div class="col-md-7">
+
+                    <h2 class="feature-heading">快船 <span class="text-muted">又爱又恨的球队</span></h2>
+
+                    <p class="lead">拥有联盟绝对顶级的控卫保罗，剽悍的格里芬，最佳第六人克劳福德，奈何就是战绩不行啊！</p>
+                </div>
+                <div class="col-md-5">
+                    <img class="feature-image img-responsive" src="images/kuaichuan-t.jpg"
+                         alt="IE">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 关于 -->
+    <div class="modal fade" id="about-modal" tabindex="-1" role="dialog" aria-labelledby="modal-label"
+         aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span
+                            aria-hidden="true">&times;</span><span class="sr-only">关闭</span></button>
+                    <h4 class="modal-title" id="modal-label">关于</h4>
+                </div>
+                <div class="modal-body">
+                    <p>把球给我</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">还有谁！！</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer>
+        <p class="pull-right"><a href="#top">回到顶部</a></p>
+
+        <p>&copy; 2016 夜夜被帅醒 </p>
+    </footer>
+
+</div>
+
+<script src="js/jquery-1.11.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script>
+    $(function () {
+        $('#ad-carousel').carousel();
+        $('#menu-nav .navbar-collapse a').click(function (e) {
+            var href = $(this).attr('href');
+            var tabId = $(this).attr('data-tab');
+            if ('#' !== href) {
+                e.preventDefault();
+                $(document).scrollTop($(href).offset().top - 70);
+                if (tabId) {
+                    $('#feature-tab a[href=#' + tabId + ']').tab('show');
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
