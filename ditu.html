@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+    <title>基本地图展示</title>
+    <link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css"/>
+    <script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+    <script src="http://webapi.amap.com/maps?v=1.3&key=5dd7e98927689a522f9965c54f7776fd"></script>
+    <script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+</head>
+<body>
+<div id="map" style="width:100%;height:100%;"></div>
+<div id="zoomin" style="position:absolute;left:10px;bottom:120px;width:60px;height:40px;background-color:#390;text-align:center;">zoomin</div>
+<div id="zoomout" style="position:absolute;left:10px;bottom:60px;width:60px;height:40px;background-color:#390;text-align:center;">zoomout</div>
+
+<script>
+    (function(){
+		//地图初始化
+		//var map=new AMap.Map('map');
+		//map.setCity('铁岭');
+		//map.setZoom(18);
+		//设置缩放按钮
+		/*document.getElementById("zoomin").onclick=function(){
+			map.zoomIn();		
+		};
+		document.getElementById("zoomout").onclick=function(){
+			map.zoomOut();		
+		};*/
+		
+		//拖拽监听事件
+		/*Amap.event.addListener(map,'dragend',function(){
+		alert('well done!!');
+		});*/
+		
+		//比例尺
+		/*map.plugin(['AMap.Scale'],function(){
+		var scale=new AMap.Scale();
+		map.addControl(scale);
+		});*/
+		
+		//地图类型切换
+		/*map.plugin(['AMap.MapType'],function(){
+		var type=new AMap.MapType();
+		map.addControl(type);
+		});*/
+		
+		
+		//鹰眼
+		/*map.plugin(['AMap.OverView'],function(){
+		var view=new AMap.OverView();
+		view.open();
+		map.addControl(view);
+		});*/
+		
+		//工具条
+		/*map.plugin(['AMap.ToolBar'],function(){
+		var tool=new AMap.ToolBar();
+		map.addControl(tool);
+		});*/
+		
+		
+		//计算面积
+		/*map.plugin(['AMap.MouseTool'],function(){
+		var tool=new AMap.MouseTool(map);
+		tool.measureArea();
+		});*/
+		
+		
+		//计算距离
+		/*map.plugin(['AMap.RangingTool'],function(){
+		var tool=new AMap.RangingTool(map);
+		tool.turnOn();
+		});*/
+		
+		
+		
+		//标记
+		/*var mk=new AMap.Marker({
+			map:map
+		});*/
+		
+		/*mk.setPosition(map.getCenter());
+		mk.setIcon('http://www.easyicon.net/api/resize_png_new.php?id=1146095&size=32');
+		*/
+		
+		//线
+		/*var polyline=new AMap.Polyline();
+		var arr=[];
+		arr.push(new AMap.LngLat(116.368904,39.913423));
+		arr.push(new AMap.LngLat(116.382156,39.901156));
+		arr.push(new AMap.LngLat(116.387271,39.912501));
+		AMap.event.addListener(polyline,'mouseover',function(){
+			alert('haha');
+			});
+		
+		polyline.setPath(arr);
+		polyline.setMap(map);*/
+		
+		
+		
+		//信息窗口
+		/*var info=new AMap.InfoWindow({
+			closeWhenClickMap:true,
+			content:'xixi'
+			});
+		AMap.event.addListener(mk,'click',function(){
+		info.open(map,map.getCenter());
+		});*/
+		
+		var map=new AMap.Map('map');
+		map.setZoom(14);
+		map.plugin('AMap.Geolocation',function(){
+			var geolocation=new AMap.GeoLocation(
+			{
+				enableHighAccuracy:true,
+				convert:true,
+				panToLocation:true,
+				showMarker:true,
+				timeout:60000
+				});
+			});
+			
+			
+			geolocation.getCurrentPosition();
+			AMap.event.addListener(geolocation,'complete',function(e){
+				console.log(e);
+				});
+		
+		
+		
+		
+		
+		
+	})();
+	
+
+</script>
+</body>
+</html>
